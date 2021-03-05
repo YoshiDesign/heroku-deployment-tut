@@ -23,7 +23,7 @@ app.get("/*", (req, res) => {
 
 app.use('/', () => {
 
-    console.log(🔥);
+    console.log("🔥");;
 
 });
 server.listen(port, hostname, () => {
