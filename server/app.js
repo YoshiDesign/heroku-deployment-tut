@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 
 var app = express();
-const buildPath = path.join(__dirname, 'build');
+const buildPath = path.join(__dirname, '../build');
 app.use(express.static(buildPath));
 
 const hostname = '127.0.0.1';
@@ -17,16 +17,11 @@ const server = http.createServer((req, res) => {
 
 app.get("/*", (req, res) => {
 
-    let url = path.join(__dirname, 'build', 'index.html');
+    let url = path.join(__dirname, '../build', 'index.html');
     res.sendFile(url);
 
 });
 
-app.use('/', () => {
-
-    console.log("🔥");;
-
-});
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
